@@ -175,6 +175,25 @@
       filter: brightness(1.2);
     }
 
+    /* Mobile responsive stats */
+    @media (max-width: 640px) {
+      #stats-grid {
+        gap: 0.75rem;
+      }
+      #stats-grid .professional-card {
+        padding: 1rem;
+      }
+      #stats-grid .stat-number {
+        font-size: 1.5rem;
+      }
+      #stats-grid p.text-sm {
+        font-size: 0.65rem;
+      }
+      #stats-grid .text-xs {
+        font-size: 0.6rem;
+      }
+    }
+
     /* Form Styles */
     .form-input {
       transition: all 0.3s ease;
@@ -384,51 +403,46 @@
       </svg>
      </div>
      <div class="p-8">
-      <h2 class="text-3xl font-bold mb-6" style="color: #0f172a;">Why Collect-Sure?</h2>
-      <div class="space-y-6">
-       <div class="border-l-4 pl-6 py-4" style="border-color: #3b82f6;">
-        <h3 class="text-xl font-bold mb-2" style="color: #0f172a;">🏆 9+ Years of Excellence</h3>
-        <p class="leading-relaxed" style="color: #64748b;">Since 2015, we've built deep expertise in receivables management across manufacturing, construction, engineering, and industrial sectors. Our proven track record speaks for itself.</p>
+      <h2 class="text-3xl font-bold mb-2" style="color: #0f172a;">Get In Touch</h2>
+      <p class="mb-6" style="color: #64748b;">Fill in your details and we'll contact you within 24 hours.</p>
+      <form action="https://formsubmit.co/lakkilakshman12@gmail.com" method="POST" id="learn-more-form">
+       <input type="hidden" name="_subject" value="New Inquiry from Collect-Sure Website">
+       <input type="hidden" name="_captcha" value="false">
+       <input type="hidden" name="_template" value="table">
+       <div class="space-y-4">
+        <div>
+         <label class="block text-sm font-semibold mb-2" style="color: #0f172a;">Full Name *</label>
+         <input type="text" name="name" required class="form-input w-full px-4 py-3 rounded-lg border" style="border-color: #e2e8f0;" placeholder="Your full name">
+        </div>
+        <div>
+         <label class="block text-sm font-semibold mb-2" style="color: #0f172a;">Email Address *</label>
+         <input type="email" name="email" required class="form-input w-full px-4 py-3 rounded-lg border" style="border-color: #e2e8f0;" placeholder="your@email.com">
+        </div>
+        <div>
+         <label class="block text-sm font-semibold mb-2" style="color: #0f172a;">Phone Number *</label>
+         <input type="tel" name="phone" required class="form-input w-full px-4 py-3 rounded-lg border" style="border-color: #e2e8f0;" placeholder="+91 98765 43210">
+        </div>
+        <div>
+         <label class="block text-sm font-semibold mb-2" style="color: #0f172a;">Company Name</label>
+         <input type="text" name="company" class="form-input w-full px-4 py-3 rounded-lg border" style="border-color: #e2e8f0;" placeholder="Your company name">
+        </div>
+        <div>
+         <label class="block text-sm font-semibold mb-2" style="color: #0f172a;">Message</label>
+         <textarea name="message" rows="3" class="form-input w-full px-4 py-3 rounded-lg border" style="border-color: #e2e8f0;" placeholder="How can we help you?"></textarea>
+        </div>
+        <button type="submit" class="professional-btn w-full px-6 py-4 rounded-lg font-semibold text-white text-lg" style="background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);">
+         Submit Inquiry
+        </button>
        </div>
-       <div class="border-l-4 pl-6 py-4" style="border-color: #10b981;">
-        <h3 class="text-xl font-bold mb-2" style="color: #0f172a;">💰 ₹500 Crore+ Recovered</h3>
-        <p class="leading-relaxed" style="color: #64748b;">We've successfully recovered over ₹500 Crores in outstanding receivables for our clients, helping them improve cash flow and business sustainability.</p>
-       </div>
-       <div class="border-l-4 pl-6 py-4" style="border-color: #f59e0b;">
-        <h3 class="text-xl font-bold mb-2" style="color: #0f172a;">🌏 PAN India Presence</h3>
-        <p class="leading-relaxed" style="color: #64748b;">With operations across all major cities and local expertise in every region, we ensure efficient collections nationwide with on-ground presence when needed.</p>
-       </div>
-       <div class="border-l-4 pl-6 py-4" style="border-color: #8b5cf6;">
-        <h3 class="text-xl font-bold mb-2" style="color: #0f172a;">📊 98% Success Rate</h3>
-        <p class="leading-relaxed" style="color: #64748b;">Our professional approach, skilled negotiators, and legal expertise result in an industry-leading 98% success rate in debt recovery.</p>
-       </div>
-       <div class="border-l-4 pl-6 py-4" style="border-color: #ef4444;">
-        <h3 class="text-xl font-bold mb-2" style="color: #0f172a;">🔒 Complete Confidentiality</h3>
-        <p class="leading-relaxed" style="color: #64748b;">ISO-certified processes ensure your data security and complete confidentiality. We handle all collections with the utmost professionalism.</p>
-       </div>
-       <div class="border-l-4 pl-6 py-4" style="border-color: #14b8a6;">
-        <h3 class="text-xl font-bold mb-2" style="color: #0f172a;">⚡ Rapid Response</h3>
-        <p class="leading-relaxed" style="color: #64748b;">Quick onboarding within 48 hours and immediate action on urgent cases. We understand that time is money in receivables management.</p>
-       </div>
-      </div>
-      <div class="mt-8 pt-6 border-t" style="border-color: #e2e8f0;">
-       <div class="flex flex-wrap gap-4"><button onclick="closeLearnMoreModal(); navigateToPage('services');" class="professional-btn px-6 py-3 rounded-lg font-semibold text-white" style="background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);"> View Our Services → </button> <button onclick="closeLearnMoreModal(); navigateToPage('contact');" class="px-6 py-3 rounded-lg font-semibold border-2" style="color: #3b82f6; border-color: #3b82f6;"> Contact Us </button>
-       </div>
-      </div>
+      </form>
      </div>
     </div>
    </div><!-- Professional Navigation -->
    <nav class="sticky top-0 z-50" style="background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0, 0, 0, 0.08); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);">
     <div class="max-w-7xl mx-auto px-6 py-4">
      <div class="flex items-center justify-between">
-      <div class="flex items-center space-x-4 animate-slide-down">
-       <div class="w-12 h-12 rounded-lg flex items-center justify-center text-white font-bold text-xl" style="background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%); box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);">
-        CS
-       </div>
-       <div>
-        <h1 id="nav-company-name" class="text-xl font-bold" style="color: #0f172a;">Collect-Sure</h1>
-        <p id="nav-tagline" class="text-xs" style="color: #64748b;">Professional AR Management</p>
-       </div>
+      <div class="flex items-center animate-slide-down">
+       <img src="attached_assets/Untitled_design_(5)_1765892261786.png" alt="Collect-Sure Consultant" style="height: 100px; width:auto;">
       </div>
       <div class="hidden md:flex items-center space-x-8"><a href="#" class="nav-link active font-semibold relative" style="color: #3b82f6;" data-page="home">Home</a> <a href="#" class="nav-link font-semibold relative" style="color: #64748b;" data-page="services">Services</a> <a href="#" class="nav-link font-semibold relative" style="color: #64748b;" data-page="why-choose-us">Why Choose Us</a> <a href="#" class="nav-link font-semibold relative" style="color: #64748b;" data-page="about">About</a> <a href="#" class="nav-link font-semibold relative" style="color: #64748b;" data-page="contact">Contact</a> <button class="professional-btn px-6 py-2.5 rounded-lg font-semibold text-white text-sm" style="background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%); box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);" onclick="navigateToPage('contact')"> Get Started </button>
       </div><button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg" style="color: #64748b;">
@@ -917,9 +931,7 @@
       <div class="grid md:grid-cols-4 gap-12 mb-12">
        <div>
         <div class="flex items-center gap-3 mb-4">
-         <div class="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold" style="background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);">
-          CS
-         </div><span class="font-bold text-lg text-white">Collect-Sure</span>
+         <img src="attached_assets/Untitled_design_(5)_1765892261786.png" alt="Collect-Sure Consultant" style="height: 100px; width: auto; background: white; padding: 4px; border-radius: 8px;">
         </div>
         <p class="text-sm leading-relaxed" style="color: #94a3b8;">Professional AR Management services across PAN India since 2015</p>
        </div>
@@ -937,9 +949,19 @@
         <h3 class="font-bold text-white mb-4">Services</h3>
         <ul class="space-y-2 text-sm" style="color: #94a3b8;">
          <li>AR Management</li>
-         <li>Securities &amp; Bonds</li>
-         <li>GST Compliance</li>
+         <li>EMD &amp; Securities Recovery</li>
+         <li>GST Forms Collection</li>
          <li>Risk Management</li>
+         <li>Bank Guarantee Follow-up</li>
+         <li>Professional Negotiation</li>
+         <li>Legal Action Support</li>
+         <li>Real-Time Reporting</li>
+         <li>Field Visits &amp; Verification</li>
+         <li>Documentation Management</li>
+         <li>Training &amp; Consultation</li>
+         <li>Debtor Investigation</li>
+         <li>Digital Collection Platform</li>
+         <li>Manpower Services</li>
         </ul>
        </div>
        <div>
@@ -1082,37 +1104,38 @@
       </svg>
      </div>
      <div class="p-8">
-      <h2 class="text-3xl font-bold mb-6" style="color: #0f172a;">Why Collect-Sure?</h2>
-      <div class="space-y-6">
-       <div class="border-l-4 pl-6 py-4" style="border-color: #3b82f6;">
-        <h3 class="text-xl font-bold mb-2" style="color: #0f172a;">🏆 9+ Years of Excellence</h3>
-        <p class="leading-relaxed" style="color: #64748b;">Since 2015, we've built deep expertise in receivables management across manufacturing, construction, engineering, and industrial sectors. Our proven track record speaks for itself.</p>
+      <h2 class="text-3xl font-bold mb-2" style="color: #0f172a;">Get In Touch</h2>
+      <p class="mb-6" style="color: #64748b;">Fill in your details and we'll contact you within 24 hours.</p>
+      <form action="https://formsubmit.co/lakkilakshman12@gmail.com" method="POST" id="learn-more-form">
+       <input type="hidden" name="_subject" value="New Inquiry from Collect-Sure Website">
+       <input type="hidden" name="_captcha" value="false">
+       <input type="hidden" name="_template" value="table">
+       <div class="space-y-4">
+        <div>
+         <label class="block text-sm font-semibold mb-2" style="color: #0f172a;">Full Name *</label>
+         <input type="text" name="name" required class="form-input w-full px-4 py-3 rounded-lg border" style="border-color: #e2e8f0;" placeholder="Your full name">
+        </div>
+        <div>
+         <label class="block text-sm font-semibold mb-2" style="color: #0f172a;">Email Address *</label>
+         <input type="email" name="email" required class="form-input w-full px-4 py-3 rounded-lg border" style="border-color: #e2e8f0;" placeholder="your@email.com">
+        </div>
+        <div>
+         <label class="block text-sm font-semibold mb-2" style="color: #0f172a;">Phone Number *</label>
+         <input type="tel" name="phone" required class="form-input w-full px-4 py-3 rounded-lg border" style="border-color: #e2e8f0;" placeholder="+91 98765 43210">
+        </div>
+        <div>
+         <label class="block text-sm font-semibold mb-2" style="color: #0f172a;">Company Name</label>
+         <input type="text" name="company" class="form-input w-full px-4 py-3 rounded-lg border" style="border-color: #e2e8f0;" placeholder="Your company name">
+        </div>
+        <div>
+         <label class="block text-sm font-semibold mb-2" style="color: #0f172a;">Message</label>
+         <textarea name="message" rows="3" class="form-input w-full px-4 py-3 rounded-lg border" style="border-color: #e2e8f0;" placeholder="How can we help you?"></textarea>
+        </div>
+        <button type="submit" class="professional-btn w-full px-6 py-4 rounded-lg font-semibold text-white text-lg" style="background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);">
+         Submit Inquiry
+        </button>
        </div>
-       <div class="border-l-4 pl-6 py-4" style="border-color: #10b981;">
-        <h3 class="text-xl font-bold mb-2" style="color: #0f172a;">💰 ₹500 Crore+ Recovered</h3>
-        <p class="leading-relaxed" style="color: #64748b;">We've successfully recovered over ₹500 Crores in outstanding receivables for our clients, helping them improve cash flow and business sustainability.</p>
-       </div>
-       <div class="border-l-4 pl-6 py-4" style="border-color: #f59e0b;">
-        <h3 class="text-xl font-bold mb-2" style="color: #0f172a;">🌏 PAN India Presence</h3>
-        <p class="leading-relaxed" style="color: #64748b;">With operations across all major cities and local expertise in every region, we ensure efficient collections nationwide with on-ground presence when needed.</p>
-       </div>
-       <div class="border-l-4 pl-6 py-4" style="border-color: #8b5cf6;">
-        <h3 class="text-xl font-bold mb-2" style="color: #0f172a;">📊 98% Success Rate</h3>
-        <p class="leading-relaxed" style="color: #64748b;">Our professional approach, skilled negotiators, and legal expertise result in an industry-leading 98% success rate in debt recovery.</p>
-       </div>
-       <div class="border-l-4 pl-6 py-4" style="border-color: #ef4444;">
-        <h3 class="text-xl font-bold mb-2" style="color: #0f172a;">🔒 Complete Confidentiality</h3>
-        <p class="leading-relaxed" style="color: #64748b;">ISO-certified processes ensure your data security and complete confidentiality. We handle all collections with the utmost professionalism.</p>
-       </div>
-       <div class="border-l-4 pl-6 py-4" style="border-color: #14b8a6;">
-        <h3 class="text-xl font-bold mb-2" style="color: #0f172a;">⚡ Rapid Response</h3>
-        <p class="leading-relaxed" style="color: #64748b;">Quick onboarding within 48 hours and immediate action on urgent cases. We understand that time is money in receivables management.</p>
-       </div>
-      </div>
-      <div class="mt-8 pt-6 border-t" style="border-color: #e2e8f0;">
-       <div class="flex flex-wrap gap-4"><button onclick="closeLearnMoreModal(); navigateToPage('services');" class="professional-btn px-6 py-3 rounded-lg font-semibold text-white" style="background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);"> View Our Services → </button> <button onclick="closeLearnMoreModal(); navigateToPage('contact');" class="px-6 py-3 rounded-lg font-semibold border-2" style="color: #3b82f6; border-color: #3b82f6;"> Contact Us </button>
-       </div>
-      </div>
+      </form>
      </div>
     </div>
    </div>
@@ -1274,9 +1297,7 @@
       <div class="grid md:grid-cols-4 gap-12 mb-12">
        <div>
         <div class="flex items-center gap-3 mb-4">
-         <div class="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold" style="background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);">
-          CS
-         </div><span class="font-bold text-lg text-white">Collect-Sure</span>
+         <img src="attached_assets/Untitled_design_(5)_1765892261786.png" alt="Collect-Sure Consultant" style="height: 40px; width: auto; background: white; padding: 4px; border-radius: 8px;">
         </div>
         <p class="text-sm leading-relaxed" style="color: #94a3b8;">Professional AR Management services across PAN India since 2015</p>
        </div>
@@ -1294,9 +1315,19 @@
         <h3 class="font-bold text-white mb-4">Services</h3>
         <ul class="space-y-2 text-sm" style="color: #94a3b8;">
          <li>AR Management</li>
-         <li>Securities &amp; Bonds</li>
-         <li>GST Compliance</li>
+         <li>EMD &amp; Securities Recovery</li>
+         <li>GST Forms Collection</li>
          <li>Risk Management</li>
+         <li>Bank Guarantee Follow-up</li>
+         <li>Professional Negotiation</li>
+         <li>Legal Action Support</li>
+         <li>Real-Time Reporting</li>
+         <li>Field Visits &amp; Verification</li>
+         <li>Documentation Management</li>
+         <li>Training &amp; Consultation</li>
+         <li>Debtor Investigation</li>
+         <li>Digital Collection Platform</li>
+         <li>Manpower Services</li>
         </ul>
        </div>
        <div>
@@ -1445,6 +1476,14 @@
         <p class="leading-relaxed text-sm mb-4" style="color: #64748b;">Technology-enabled collection system with automated reminders, payment links, and real-time status tracking for efficiency.</p>
         <button class="service-learn-more text-sm font-semibold flex items-center gap-1 transition-colors" style="color: #3b82f6;" data-service="Digital Collection Platform">Learn More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></button>
        </div>
+       <div class="professional-card p-8 service-card cursor-pointer">
+        <div class="icon-container mb-6" style="background: linear-gradient(135deg, #fdf4ff 0%, #fae8ff 100%); color: #a855f7;">
+         👥
+        </div>
+        <h3 class="text-xl font-bold mb-4" style="color: #0f172a;">14. Manpower Services</h3>
+        <p class="leading-relaxed text-sm mb-4" style="color: #64748b;">Providing qualified manpower required by our clients for Accounting and Commercial functions, ensuring skilled professionals for your business needs.</p>
+        <button class="service-learn-more text-sm font-semibold flex items-center gap-1 transition-colors" style="color: #3b82f6;" data-service="Manpower Services for Accounting/Commercial">Learn More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></button>
+       </div>
       </div>
      </div>
     </section><!-- Additional Services -->
@@ -1518,9 +1557,7 @@
       <div class="grid md:grid-cols-4 gap-12 mb-12">
        <div>
         <div class="flex items-center gap-3 mb-4">
-         <div class="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold" style="background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);">
-          CS
-         </div><span class="font-bold text-lg text-white">Collect-Sure</span>
+         <img src="attached_assets/Untitled_design_(5)_1765892261786.png" alt="Collect-Sure Consultant" style="height: 40px; width: auto; background: white; padding: 4px; border-radius: 8px;">
         </div>
         <p class="text-sm leading-relaxed" style="color: #94a3b8;">Professional AR Management services across PAN India since 2015</p>
        </div>
@@ -1538,9 +1575,19 @@
         <h3 class="font-bold text-white mb-4">Services</h3>
         <ul class="space-y-2 text-sm" style="color: #94a3b8;">
          <li>AR Management</li>
-         <li>Securities &amp; Bonds</li>
-         <li>GST Compliance</li>
+         <li>EMD &amp; Securities Recovery</li>
+         <li>GST Forms Collection</li>
          <li>Risk Management</li>
+         <li>Bank Guarantee Follow-up</li>
+         <li>Professional Negotiation</li>
+         <li>Legal Action Support</li>
+         <li>Real-Time Reporting</li>
+         <li>Field Visits &amp; Verification</li>
+         <li>Documentation Management</li>
+         <li>Training &amp; Consultation</li>
+         <li>Debtor Investigation</li>
+         <li>Digital Collection Platform</li>
+         <li>Manpower Services</li>
         </ul>
        </div>
        <div>
@@ -1703,9 +1750,7 @@
       <div class="grid md:grid-cols-4 gap-12 mb-12">
        <div>
         <div class="flex items-center gap-3 mb-4">
-         <div class="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold" style="background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);">
-          CS
-         </div><span class="font-bold text-lg text-white">Collect-Sure</span>
+         <img src="attached_assets/Untitled_design_(5)_1765892261786.png" alt="Collect-Sure Consultant" style="height: 40px; width: auto; background: white; padding: 4px; border-radius: 8px;">
         </div>
         <p class="text-sm leading-relaxed" style="color: #94a3b8;">Professional AR Management services across PAN India since 2015</p>
        </div>
@@ -1723,9 +1768,19 @@
         <h3 class="font-bold text-white mb-4">Services</h3>
         <ul class="space-y-2 text-sm" style="color: #94a3b8;">
          <li>AR Management</li>
-         <li>Securities &amp; Bonds</li>
-         <li>GST Compliance</li>
+         <li>EMD &amp; Securities Recovery</li>
+         <li>GST Forms Collection</li>
          <li>Risk Management</li>
+         <li>Bank Guarantee Follow-up</li>
+         <li>Professional Negotiation</li>
+         <li>Legal Action Support</li>
+         <li>Real-Time Reporting</li>
+         <li>Field Visits &amp; Verification</li>
+         <li>Documentation Management</li>
+         <li>Training &amp; Consultation</li>
+         <li>Debtor Investigation</li>
+         <li>Digital Collection Platform</li>
+         <li>Manpower Services</li>
         </ul>
        </div>
        <div>
@@ -1839,9 +1894,7 @@
       <div class="grid md:grid-cols-4 gap-12 mb-12">
        <div>
         <div class="flex items-center gap-3 mb-4">
-         <div class="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold" style="background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);">
-          CS
-         </div><span class="font-bold text-lg text-white">Collect-Sure</span>
+         <img src="attached_assets/Untitled_design_(5)_1765892261786.png" alt="Collect-Sure Consultant" style="height: 40px; width: auto; background: white; padding: 4px; border-radius: 8px;">
         </div>
         <p class="text-sm leading-relaxed" style="color: #94a3b8;">Professional AR Management services across PAN India since 2015</p>
        </div>
@@ -1859,9 +1912,19 @@
         <h3 class="font-bold text-white mb-4">Services</h3>
         <ul class="space-y-2 text-sm" style="color: #94a3b8;">
          <li>AR Management</li>
-         <li>Securities &amp; Bonds</li>
-         <li>GST Compliance</li>
+         <li>EMD &amp; Securities Recovery</li>
+         <li>GST Forms Collection</li>
          <li>Risk Management</li>
+         <li>Bank Guarantee Follow-up</li>
+         <li>Professional Negotiation</li>
+         <li>Legal Action Support</li>
+         <li>Real-Time Reporting</li>
+         <li>Field Visits &amp; Verification</li>
+         <li>Documentation Management</li>
+         <li>Training &amp; Consultation</li>
+         <li>Debtor Investigation</li>
+         <li>Digital Collection Platform</li>
+         <li>Manpower Services</li>
         </ul>
        </div>
        <div>
@@ -2129,6 +2192,17 @@
       const modal = document.getElementById('learn-more-modal');
       modal.classList.remove('active');
       document.body.style.overflow = 'auto';
+    }
+
+    // Service Inquiry Modal Function
+    function openServiceInquiryModal(serviceName) {
+      const modal = document.getElementById('learn-more-modal');
+      const messageField = modal.querySelector('textarea[name="message"]');
+      if (messageField) {
+        messageField.value = 'I am interested in: ' + serviceName;
+      }
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
     }
 
     // Service Learn More button click handlers
