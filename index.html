@@ -395,7 +395,7 @@
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
  </head>
  <body class="h-full">
-  <div class="w-full h-full overflow-auto" style="background: #ffffff;"><!-- Learn More Modal -->
+  <div id="main-container" class="w-full h-full overflow-auto" style="background: #ffffff;"><!-- Learn More Modal -->
    <div id="learn-more-modal" class="modal">
     <div class="modal-content">
      <div class="modal-close" onclick="closeLearnMoreModal()">
@@ -439,7 +439,7 @@
     </div>
    </div><!-- Professional Navigation -->
    <nav class="sticky top-0 z-50" style="background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0, 0, 0, 0.08); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);">
-    <div class="max-w-7xl mx-auto px-6 py-4">
+    <div class="max-w-7xl mx-auto px-6 py-1">
      <div class="flex items-center justify-between">
       <div class="flex items-center animate-slide-down">
        <img src="attached_assets/Untitled_design_(5)_1765892261786.png" alt="Collect-Sure Consultant" style="height: 150px; width:auto;">
@@ -1955,7 +1955,7 @@ Mumbai- 400024</p>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     // Navigation System
-    function navigateToPage(pageName) {
+    function navigateToPage(pageName, addToHistory = true) {
       // Hide all pages
       const pages = document.querySelectorAll('.page-content');
       pages.forEach(page => {
@@ -1966,7 +1966,19 @@ Mumbai- 400024</p>
       const targetPage = document.getElementById(pageName + '-page');
       if (targetPage) {
         targetPage.classList.add('active');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        // Scroll the main container to top
+        const mainContainer = document.getElementById('main-container');
+        if (mainContainer) {
+          mainContainer.scrollTop = 0;
+        }
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+      }
+
+      // Add to browser history for back/forward navigation
+      if (addToHistory) {
+        history.pushState({ page: pageName }, '', '#' + pageName);
       }
 
       // Update nav links - desktop
@@ -2004,6 +2016,27 @@ Mumbai- 400024</p>
         }, 300);
       }
     }
+
+    // Handle browser back/forward buttons
+    window.addEventListener('popstate', function(event) {
+      if (event.state && event.state.page) {
+        navigateToPage(event.state.page, false);
+      } else {
+        const hash = window.location.hash.replace('#', '');
+        navigateToPage(hash || 'home', false);
+      }
+    });
+
+    // Handle initial page load based on URL hash
+    (function() {
+      const hash = window.location.hash.replace('#', '');
+      if (hash && document.getElementById(hash + '-page')) {
+        navigateToPage(hash, false);
+        history.replaceState({ page: hash }, '', '#' + hash);
+      } else {
+        history.replaceState({ page: 'home' }, '', window.location.pathname);
+      }
+    })();
 
     // Stat Counter Animation with Glow Effect
     function animateStatCounters() {
@@ -2287,8 +2320,3 @@ Mumbai- 400024</p>
   </script>
  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ae4d45cd6e96091',t:'MTc2NTc5MDA1NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
-
-
-
-
-
